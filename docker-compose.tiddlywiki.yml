@@ -2,8 +2,8 @@ version: '2.0'
 services:
 
   tiddlywiki:
-    image: dosyoyas/tiddlywiki-ARM:latest
-    container_name: tiddlywiki-ARM
+    image: dosyoyas/tiddlywiki-arm:latest
+    container_name: tiddlywiki-arm
     environment:
         - USERNAME=user
         - PASSWORD=wiki

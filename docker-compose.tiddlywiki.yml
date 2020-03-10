@@ -1,0 +1,14 @@
+version: '2.0'
+services:
+
+  tiddlywiki:
+    image: dosyoyas/tiddlywiki-ARM:latest
+    container_name: tiddlywiki-ARM
+    environment:
+        - USERNAME=user
+        - PASSWORD=wiki
+        - NODE_MEM=256
+    volumes:
+        - ./.tiddlywiki/:/var/lib/tiddlywiki/
+    ports:
+        - 8080:8080

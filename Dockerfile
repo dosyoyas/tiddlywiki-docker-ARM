@@ -1,6 +1,6 @@
-FROM arm32v6/node:10.19-alpine
+FROM arm32v6/node:lts-alpine3.15
 
-RUN npm install -ddd -g tiddlywiki@5.1.21
+RUN npm install -ddd -g tiddlywiki@5.2.1
 
 # Setup wiki volume
 VOLUME /var/lib/tiddlywiki

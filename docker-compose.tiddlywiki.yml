@@ -9,6 +9,6 @@ services:
         - PASSWORD=wiki
         - NODE_MEM=256
     volumes:
-        - ./.tiddlywiki/:/var/lib/tiddlywiki/
+        - /home/pi/tiddlywiki/:/var/lib/tiddlywiki/
     ports:
         - 8080:8080

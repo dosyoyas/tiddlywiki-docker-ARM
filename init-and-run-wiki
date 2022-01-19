@@ -14,6 +14,10 @@ if [ ! -d /var/lib/tiddlywiki/mywiki ]; then
   /usr/bin/env node $NODEJS_V8_ARGS $tiddlywiki_script mywiki --init server
 
   mkdir /var/lib/tiddlywiki/mywiki/tiddlers
+
+  # Restore backup (must be at ../backup/index.html)
+  cd /var/lib/tiddlywiki/mywiki/
+  exec /usr/bin/env node $NODEJS_V8_ARGS $tiddlywiki_script --load ../backup/index.html
 fi
 
 
@@ -29,7 +33,7 @@ else
   fi
 fi
 
-# Start the tiddlywiki server
 
+# Start the tiddlywiki server
 exec /usr/bin/env node $NODEJS_V8_ARGS $tiddlywiki_script mywiki --server 8080 $:/core/save/all text/plain text/html "${USERNAME:-user}" "${PASSWORD-wiki}" 0.0.0.0 ${SERVE_URI}
 
